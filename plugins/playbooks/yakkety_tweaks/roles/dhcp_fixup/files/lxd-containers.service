@@ -1,0 +1,18 @@
+[Unit]
+Description=LXD - container startup/shutdown
+Documentation=man:lxd(1)
+After=lxd.socket lxd.service
+Requires=lxd.socket
+
+[Service]
+Type=oneshot
+ExecStartPre=/sbin/iptables -t mangle -A POSTROUTING -o lxdbr0 -p udp -m udp --dport 68 -j CHECKSUM --checksum-fill -m comment --comment "workaround for Debian jessie dhcp client"
+ExecStart=/usr/bin/lxd activateifneeded
+ExecStop=/usr/lib/lxd/shutdown
+ExecStopPost=/sbin/iptables -t mangle -D POSTROUTING -o lxdbr0 -p udp -m udp --dport 68 -j CHECKSUM --checksum-fill -m comment --comment "workaround for Debian jessie dhcp client"
+TimeoutStartSec=30s
+TimeoutStopSec=90s
+RemainAfterExit=yes
+
+[Install]
+WantedBy=multi-user.target

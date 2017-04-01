@@ -1,0 +1,4 @@
+---
+
+- name: Add yakkety updates repository.
+  apt_repository: repo='deb http://archive.ubuntu.com/ubuntu/ yakkety-updates main restricted universe multiverse' state=present update_cache=yes

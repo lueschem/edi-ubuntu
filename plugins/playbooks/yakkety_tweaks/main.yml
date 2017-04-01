@@ -1,0 +1,8 @@
+- hosts: edi
+  roles:
+    - role: dhcp_fixup
+      become: True
+      become_user: root
+    - role: repositories
+      become: True
+      become_user: root
