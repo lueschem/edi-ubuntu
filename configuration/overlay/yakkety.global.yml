@@ -1,0 +1,6 @@
+bootstrap:
+  repository: deb http://archive.ubuntu.com/ubuntu/ yakkety main restricted universe multiverse
+playbooks:
+  050_yakkety_tweaks:
+    path: playbooks/yakkety_tweaks/main.yml
+

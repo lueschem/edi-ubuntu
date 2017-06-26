@@ -1,0 +1,29 @@
+bootstrap:
+  architecture: amd64
+  tool: debootstrap
+general:
+  edi_compression: gz
+lxc_profiles:
+  010_lxc_networking:
+    path: lxc_profiles/general/lxc_networking/default_interface.yml
+  020_nesting:
+    path: lxc_profiles/general/lxc_nesting/enable_nesting.yml
+lxc_templates:
+  010_etc_hostname:
+    path: lxc_templates/debian/hostname/hostname.yml
+  020_etc_hosts:
+    path: lxc_templates/debian/hosts/hosts.yml
+playbooks:
+  010_inherit_host_proxy_settings:
+    path: playbooks/debian/inherit_host_proxy_settings/main.yml
+  020_lxc_networking:
+    path: playbooks/debian/lxc_networking/main.yml
+  030_base_system:
+    path: playbooks/debian/base_system/main.yml
+  040_development_user_facilities:
+    path: playbooks/debian/development_user_facilities/main.yml
+shared_folders:
+  edi_workspace:
+    folder: workspace
+    mountpoint: workspace
+

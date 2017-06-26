@@ -1,0 +1,3 @@
+bootstrap:
+  repository: deb http://archive.ubuntu.com/ubuntu/ zesty main restricted universe multiverse
+
