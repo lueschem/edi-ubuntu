@@ -9,7 +9,7 @@ Example:
 sudo edi -v lxc configure ubuntu-artful artful.yml
 ```
 
-Within the container edi can be setup according to the [getting started guide](http://docs.get-edi.io/en/latest/getting_started.html).
+Within the container edi can be setup according to the [getting started guide](https://docs.get-edi.io/en/latest/getting_started.html).
 
 The following tests verify the basic functionality:
 
